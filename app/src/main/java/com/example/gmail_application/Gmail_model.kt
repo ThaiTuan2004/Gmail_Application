@@ -1,3 +1,5 @@
 package com.example.gmail_application
 
-data class Gmail_model(val imageResId: Int, val title: String, val content: String)
+import java.time.LocalDateTime
+
+data class Gmail_model(val imageResId: Int, val sender:String, val title: String, val content: String, val dateTime: LocalDateTime)

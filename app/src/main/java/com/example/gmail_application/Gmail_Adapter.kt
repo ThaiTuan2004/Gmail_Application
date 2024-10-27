@@ -27,11 +27,15 @@ class Gmail_Adapter(val list:List<Gmail_model>) :BaseAdapter() {
 
         val gmail=list[position]
 
-        val imageView= view?.findViewById<ImageView>(R.id.imageView)
-        val titleView= view?.findViewById<TextView>(R.id.titleView)
-        val contentView= view?.findViewById<TextView>(R.id.contentView)
+        val imageView= view?.findViewById<ImageView>(R.id.sender_avatar)
+        val senderView= view?.findViewById<TextView>(R.id.sender)
+        val titleView= view?.findViewById<TextView>(R.id.title)
+        val contentView= view?.findViewById<TextView>(R.id.content)
+        val dateTimeView= view?.findViewById<TextView>(R.id.datetime)
 
         imageView?.setImageResource(gmail.imageResId)
+        senderView?.text=gmail.sender
+        dateTimeView?.text=gmail.dateTime.toString()
         contentView?.text=gmail.content
         titleView?.text=gmail.title
 
